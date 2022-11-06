@@ -1,12 +1,12 @@
 import Layout from '@/layout';
 
-const tableRoutes = {
+const calenderRoutes = {
   path: '/table',
   component: Layout,
   redirect: '/table/complex-table',
-  name: 'Complex Table',
+  name: 'Kalender',
   meta: {
-    title: 'Aufträge',
+    title: 'Kalender',
     icon: 'table',
     permissions: ['view menu table'],
   },
@@ -31,4 +31,4 @@ const tableRoutes = {
     },
   ],
 };
-export default tableRoutes;
+export default calenderRoutes;

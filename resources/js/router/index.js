@@ -16,7 +16,11 @@ import Layout from '@/layout';
 import componentRoutes from './modules/components';
 import chartsRoutes from './modules/charts';
 import tableRoutes from './modules/table';
-import excelRoutes from './modules/excel';
+import invoiceRoutes from './modules/invoice';
+import managerRoutes from './modules/manage';
+import templateRoutes from './modules/templates';
+import todoRoutes from './modules/todo';
+import calenderRoutes from './modules/calender';
 
 /**
  * Sub-menu only appear when children.length>=1
@@ -88,19 +92,6 @@ export const constantRoutes = [
     ],
   },
   {
-    path: '/profile',
-    component: Layout,
-    redirect: '/profile/edit',
-    children: [
-      {
-        path: 'edit',
-        component: () => import('@/views/users/SelfProfile'),
-        name: 'SelfProfile',
-        meta: { title: 'userProfile', icon: 'user', noCache: true },
-      },
-    ],
-  },
-  {
     path: '/guide',
     component: Layout,
     redirect: '/guide/index',
@@ -113,47 +104,30 @@ export const constantRoutes = [
       },
     ],
   },
-];
-
-export const asyncRoutes = [
-  componentRoutes,
-  chartsRoutes,
-  tableRoutes,
-  excelRoutes,
   {
-    path: '/zip',
+    path: '/email',
     component: Layout,
-    redirect: '/zip/download',
-    alwaysShow: true,
-    meta: { title: 'zip', icon: 'zip', permissions: ['view menu zip'] },
-    children: [
-      {
-        path: 'download',
-        component: () => import('@/views/zip'),
-        name: 'ExportZip',
-        meta: { title: 'exportZip' },
-      },
-    ],
-  },
-  {
-    path: '/pdf',
-    component: Layout,
-    redirect: '/pdf/index',
-    meta: { title: 'pdf', icon: 'pdf', permissions: ['view menu pdf'] },
+    redirect: '/email/index',
     children: [
       {
         path: 'index',
-        component: () => import('@/views/pdf'),
-        name: 'Pdf',
-        meta: { title: 'pdf' },
+        component: () => import('@/views/email/index'),
+        name: 'Email',
+        meta: { title: 'E-Mail', icon: 'email', noCache: true },
       },
     ],
   },
-  {
-    path: '/pdf/download',
-    component: () => import('@/views/pdf/Download'),
-    hidden: true,
-  },
+];
+
+export const asyncRoutes = [
+  tableRoutes,
+  todoRoutes,
+  calenderRoutes,
+  invoiceRoutes,
+  managerRoutes,
+  templateRoutes,
+  chartsRoutes,
+  componentRoutes,
 ];
 
 const createRouter = () => new Router({

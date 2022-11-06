@@ -8,8 +8,8 @@ const componentRoutes = {
   redirect: 'noredirect',
   name: 'ComponentDemo',
   meta: {
-    title: 'components',
-    icon: 'component',
+    title: 'Konto',
+    icon: 'user',
     permissions: ['view menu components'],
   },
   children: [
@@ -24,6 +24,12 @@ const componentRoutes = {
       component: () => import('@/views/components-demo/Dropzone'),
       name: 'DropzoneDemo',
       meta: { title: 'dropzone' },
+    },
+    {
+      path: 'edit',
+      component: () => import('@/views/users/SelfProfile'),
+      name: 'SelfProfile',
+      meta: { title: 'Konto', noCache: true },
     },
   ],
 };

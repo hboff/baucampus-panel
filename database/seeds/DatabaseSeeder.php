@@ -16,8 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         $admin = User::create([
             'name' => 'Admin',
-            'email' => 'admin@laravue.dev',
-            'password' => Hash::make('laravue'),
+            'email' => 'demo@baucampus.com',
+            'password' => Hash::make('demo'),
         ]);
         $manager = User::create([
             'name' => 'Manager',

@@ -1,12 +1,12 @@
 import Layout from '@/layout';
 
-const tableRoutes = {
+const managerRoutes = {
   path: '/table',
   component: Layout,
   redirect: '/table/complex-table',
   name: 'Complex Table',
   meta: {
-    title: 'Aufträge',
+    title: 'Dateimanager',
     icon: 'table',
     permissions: ['view menu table'],
   },
@@ -31,4 +31,4 @@ const tableRoutes = {
     },
   ],
 };
-export default tableRoutes;
+export default managerRoutes;
